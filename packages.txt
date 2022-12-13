@@ -1,0 +1,9 @@
+fish
+kitty
+ranger
+lazygit
+starship
+lsd
+trash-cli
+nerd-fonts-complete
+github-cli
