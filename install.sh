@@ -16,21 +16,13 @@ done < packages.txt
 
 # Install the pacman packages
 if [ -n "$PAC_PKGS" ]; then
-  #sudo pacman -S $PAC_PKGS
-  echo "Pacman"
+  sudo pacman -S $PAC_PKGS
 fi
 
 # Install the AUR packages (assuming you are using an AUR helper like yay)
 if [ -n "$AUR_PKGS" ]; then
-  #$AUR_HELPER -S $AUR_PKGS
-  echo "AUR"
+  $AUR_HELPER -S $AUR_PKGS
 fi
-
-# Install LunarVim Nightly
-#bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-
-# Install Rustup
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 
 # Create symlinks from config dir to $HOME/.config
@@ -45,7 +37,7 @@ for dir in "$CONFIG_DIR"/*/; do
 done
 
 # Make Fish default shell
-#chsh -s $(which fish)
+chsh -s $(which fish)
 
 # Prompt the user to confirm the reboot
 read -p "Do you want to reboot the system (y/n)? [y] " response
